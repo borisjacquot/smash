@@ -30,6 +30,49 @@ SQL
             return null;
         }
     }
+    //Ajoute token a l'id du membre correspondant
+    public static function addTokenAuth($id,$token){
+        $stmt = myPDO::getInstance()->prepare(<<<SQL
+				UPDATE user
+				SET token = ?
+				WHERE idUser = ?;
+SQL
+        );
+        $stmt->execute(array(
+            $token, $id
+        ));
+    }
+
+
+    //Supprime tout les tokens de la BD
+    public static function delTokenAuth(){
+        $stmt = myPDO::getInstance()->prepare(<<<SQL
+				UPDATE user
+				SET token = 0;
+SQL
+        );
+        $stmt->execute();
+    }
+
+
+    //Verifie si un pseudo est utilisé
+    public static function verifToken($token,$id)
+    {
+        $stmt = myPDO::getInstance()->prepare(<<<SQL
+        SELECT *
+        FROM user
+        WHERE idUser =  ? AND token = ?;
+SQL
+        );
+        $stmt->execute(array(
+            $id,$token
+        ));
+        if(($object = $stmt->fetch()) !== false){
+            return true;
+        }
+        return false;
+    }
+
 
     //Verifie si un pseudo est utilisé
     public static function pseudoUse($pseudo)
