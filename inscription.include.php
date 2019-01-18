@@ -28,8 +28,9 @@ if(isset($_POST['pseudo']) && isset($_POST['psd1']) && isset($_POST['psd2']) && 
 if(isset($_SESSION['userID'])){
     echo "Connected as user number ".$_SESSION['userID'];
 }
-echo <<<HTML
-    <form action="inscription.php" method="post">
+else{
+    echo <<<HTML
+    <form action="#" method="post">
         <label>Identifiant(Pseudo) : <input type="text" name="pseudo" required></label>
         <label>Mot de passe : <input type="password" name="psd1" required></label>
         <label>Verification mot de passe : <input type="password" name="psd2" required></label>
@@ -37,3 +38,4 @@ echo <<<HTML
         <input type="submit">
     </form>
 HTML;
+}
