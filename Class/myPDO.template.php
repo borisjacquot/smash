@@ -6,7 +6,7 @@
  * Time: 16:30
  */
 
-final class PDO {
+final class myPDO {
     /**
      * @var myPDO $_PDOInstance Instance unique.
      */
@@ -36,6 +36,10 @@ final class PDO {
      * Constructeur privé.
      */
     private function __construct() {
+        /*
+         * Pour vous empêcher de construire
+         * des instances de myPDO qui sont inutiles
+         */
     }
 
     /**

@@ -6,25 +6,49 @@
  * Time: 16:49
  */
 
-include_once "PDO.php";
+require_once "myPDO.class.php";
+
+
 class User
 {
-    public static function createFromAuth(array $data) {
+    public static function createFromAuth($pseudo,$mdp) {
         $stmt = myPDO::getInstance()->prepare(<<<SQL
-				SELECT *
+				SELECT idUser
 				FROM user
-				WHERE login = ? AND sha512pass = ?;
+				WHERE pseudo = ? AND mdp = ?;
 SQL
         );
-        $stmt->execute(array($_POST["login"], hash("sha512", $_POST["pass"])));
+        $mdp = hash("sha512", $mdp);
+        $stmt->execute(array(
+            $pseudo, $mdp
+        ));
         $stmt->setFetchMode(PDO::FETCH_CLASS,__CLASS__);
         if(($object = $stmt->fetch()) !== false) {
-            Session::start();
-            $_SESSION["connected"] = true;
             return $object;
         }
-        throw new Exception("L'utilisateur n'existe pas !");
+        else{
+            return null;
+        }
     }
+
+    //Verifie si un pseudo est utilisé
+    public static function pseudoUse($pseudo)
+    {
+        $stmt = myPDO::getInstance()->prepare(<<<SQL
+        SELECT pseudo
+        FROM user
+        WHERE pseudo = :pseudo;
+SQL
+        );
+        $stmt->execute(array(
+            'pseudo' => $pseudo
+        ));
+        if($stmt == null){
+            return true;
+        }
+        return false;
+    }
+
 
     //Insertion membre
     public static function addUser($pseudo,$mdp,$mail) {
@@ -37,7 +61,7 @@ SQL
         try{
             $stmt->execute(array(
                 'pseudo'=>$pseudo,
-                'mdp'=>$mdp,
+                'mdp'=>hash("sha512", $mdp),
                 'mail'=>$mail
             ));
             echo "Votre compte à bien été créer";
