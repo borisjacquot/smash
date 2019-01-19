@@ -26,8 +26,8 @@
 			<p class="navbar-item"><a href="#" class="nonactive"><i class="fas fa-fist-raised" style="color:#3dc1d3;margin-right: 5px;"></i>COMBATTANTS</a></p>
 		</div>
 		<div class="column right">
-			<p class="navbar-item has-text-white desktop">CONNEXION</p>
-			<p class="navbar-item has-text-white desktop">INSCRIPTION</p>
+			<p class="navbar-item"><a href="login.include.php" class="nonactive">CONNEXION</a></p>
+			<a href="inscription.include.php" class="button is-rounded" style="color: white; border: none; background-color: #3dc1d3;">INSCRIPTION</a>
 			<figure class="navbar-item image has-text-white">
 				<i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
 			</figure>
