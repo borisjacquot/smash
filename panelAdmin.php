@@ -30,12 +30,11 @@ require_once "class/Session.class.php";
                 url : "ajax/userAjax.php",
                 method : "get",
                 handleAs : "json",
-                parameters : { pseudo : document.getElementById("pseudo").value},
+                parameters : { pseudo : document.getElementById("pseudo").value.replace(" ","")},
                 onSuccess : function(res) {
                     console.log(res);
                     var listePseudo = "<ul>";
                     for(var user in res){
-                        console.log(user);
                         listePseudo += "<li>"+res[user]["pseudo"]+"</li>";
                     }
                     listePseudo +="<ul>";
