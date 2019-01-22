@@ -18,8 +18,8 @@
  * Time: 16:11
  */
 
-require "Class/user.class.php";
-require_once "Class/Session.class.php";
+require "class/user.class.php";
+require_once "class/session.class.php";
 Session::start();
 
 if(isset($_COOKIE['token']) && isset($_COOKIE['identifier'])){// si il a les cookies REMEMBER ME

@@ -18,8 +18,8 @@
  * Time: 16:10
  */
 
-require "Class/user.class.php";
-require_once "Class/Session.class.php";
+require "class/user.class.php";
+require_once "class/session.class.php";
 Session::start();
 if(isset($_SESSION['']))
 if(isset($_POST['pseudo']) && isset($_POST['psd1']) && isset($_POST['psd2']) && isset($_POST['mail'])){
@@ -42,14 +42,6 @@ if(isset($_SESSION['userID'])){
 }
 else{
     echo <<<HTML
-    <!-- <form action="#" method="post">
-        <label>Identifiant(Pseudo) : <input type="text" name="pseudo" required></label>
-        <label>Mot de passe : <input type="password" name="psd1" required></label>
-        <label>Verification mot de passe : <input type="password" name="psd2" required></label>
-        <label>Adresse e-mail : <input type="mail" name="mail" required></label>
-        <input type="submit">
-    </form> -->
-
     <section class="hero is-fullheight">
         <div class="hero-body">
             <div class="container has-text-centered">

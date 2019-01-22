@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Ven 18 Janvier 2019 à 13:32
+-- Généré le :  Mar 22 Janvier 2019 à 21:42
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -38,7 +38,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`idUser`, `pseudo`, `mdp`, `mail`) VALUES
-(2, 'r', 'a882f0ac848b0b6b4ca7b42bfa1d266afd0ddeba9204ae57a984a69376d59816b1ef3f4d442ea8a70396067ff5b70e0ae8eab3935b617b8e366d8e35c3bfe14c', 'c@gmail.com');
+(2, 'r', 'a882f0ac848b0b6b4ca7b42bfa1d266afd0ddeba9204ae57a984a69376d59816b1ef3f4d442ea8a70396067ff5b70e0ae8eab3935b617b8e366d8e35c3bfe14c', 'c@gmail.com'),
+(3, 'Boris', 'dsfsdfdsfsdf', 'cl@gmail.com'),
+(4, 'Bob', 'sdqfdsf', 'cl@gmail.com'),
+(5, 'Borrrrr', 'sdfsdfsf', 'cl@gmail.com'),
+(6, 'Br', 'sdqfsdf', 'cl@gmail.com'),
+(7, 'BBBBB', 'eszfdsf', 'cl@gmail.com'),
+(8, 'Borisa', 'sdfsdfsd', 'cl@gmail.com');
 
 --
 -- Index pour les tables exportées
@@ -58,7 +64,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

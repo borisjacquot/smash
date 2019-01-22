@@ -6,8 +6,8 @@
  * Time: 14:34
  */
 
-require "Class/user.class.php";
-require_once "Class/Session.class.php";
+require "class/user.class.php";
+require_once "class/session.class.php";
 Session::start();
 
 if(isset($_POST['logout'])){
