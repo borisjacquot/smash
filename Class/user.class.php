@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Clement
- * Date: 17/01/2019
- * Time: 16:49
- */
 
 require_once "myPDO.class.php";
 
