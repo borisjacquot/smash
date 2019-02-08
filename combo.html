@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<div id="choice">
+    <span onclick="selectButton('A')">A</span>
+    <span onclick="selectButton('B')">B</span>
+    <span onclick="selectButton('X')">X</span>
+    <span onclick="selectButton('Y')">Y</span>
+    <i class="fas fa-caret-up" onclick="selectButton('UP')"></i>
+    <i class="fas fa-caret-down" onclick="selectButton('DOWN')"></i>
+    <i class="fas fa-caret-left" onclick="selectButton('LEFT')"></i>
+    <i class="fas fa-caret-right" onclick="selectButton('RIGHT')"></i>
+    <span onclick="selectButton(',')">,</span>
+</div>
+<textarea cols="100" rows="1" id="valCode"></textarea>
+<div id="result">
+
+</div>
+
+<style>
+    i{
+        font-size:50px;
+        margin: 1px;
+    }
+</style>
+<script>
+    window.onload = document.getElementById("valCode").value="";
+    function selectButton(b){
+        var result = document.getElementById("result");
+        var valCode= document.getElementById("valCode");
+        var html = document.createElement('i');
+        if(b!="," && valCode.value !="" && valCode.value[valCode.value.length-2]!=","){
+            valCode.value+=" + ";
+            var more = document.createElement('i');
+            more.setAttribute("class","fas fa-plus");
+            more.setAttribute("style","font-size:25px");
+            result.append(more);
+        }
+        switch (b) {
+            case "A" :
+                valCode.value += "A";
+                break;
+            case "B" :
+                valCode.value += "B";
+                break;
+            case "X" :
+                valCode.value += "X";
+                break;
+            case "Y" :
+                valCode.value += "Y";
+                break;
+            case "LEFT" :
+                html.setAttribute("class", "fas fa-caret-left");
+                valCode.value += "LEFT";
+                break;
+            case "RIGHT" :
+                html.setAttribute("class", "fas fa-caret-right");
+                valCode.value += "RIGHT";
+                break;
+            case "UP" :
+                html.setAttribute("class", "fas fa-caret-up");
+                valCode.value += "UP";
+                break;
+            case "DOWN" :
+                html.setAttribute("class", "fas fa-caret-down")
+                valCode.value += "DOWN";
+                break;
+            case "," :
+                valCode.value += ", ";
+                break;
+
+        }
+        result.append(html);
+    }
+</script>
