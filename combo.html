@@ -1,14 +1,14 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <div id="choice">
-    <span onclick="selectButton('A')">A</span>
-    <span onclick="selectButton('B')">B</span>
-    <span onclick="selectButton('X')">X</span>
-    <span onclick="selectButton('Y')">Y</span>
-    <i class="fas fa-caret-up" onclick="selectButton('UP')"></i>
-    <i class="fas fa-caret-down" onclick="selectButton('DOWN')"></i>
-    <i class="fas fa-caret-left" onclick="selectButton('LEFT')"></i>
-    <i class="fas fa-caret-right" onclick="selectButton('RIGHT')"></i>
-    <span onclick="selectButton(',')">,</span>
+    <img src="img/boutons/switch/a.png" onclick="selectButton('A')">
+    <img src="img/boutons/switch/b.png" onclick="selectButton('B')">
+    <img src="img/boutons/switch/x.png" onclick="selectButton('X')">
+    <img src="img/boutons/switch/y.png" onclick="selectButton('Y')">
+    <img src="img/boutons/switch/up.png" onclick="selectButton('UP')">
+    <img src="img/boutons/switch/down.png" onclick="selectButton('DOWN')">
+    <img src="img/boutons/switch/left.png" onclick="selectButton('LEFT')">
+    <img src="img/boutons/switch/right.png" onclick="selectButton('RIGHT')">
+    <button onclick="selectButton(',')">,</button>
 </div>
 <textarea cols="100" rows="1" id="valCode"></textarea>
 <div id="result">
@@ -26,7 +26,7 @@
     function selectButton(b){
         var result = document.getElementById("result");
         var valCode= document.getElementById("valCode");
-        var html = document.createElement('i');
+        var html = document.createElement('img');
         if(b!="," && valCode.value !="" && valCode.value[valCode.value.length-2]!=","){
             valCode.value+=" + ";
             var more = document.createElement('i');
@@ -36,31 +36,35 @@
         }
         switch (b) {
             case "A" :
+                html.setAttribute("src", "img/boutons/switch/a.png");
                 valCode.value += "A";
                 break;
             case "B" :
+                html.setAttribute("src", "img/boutons/switch/b.png");
                 valCode.value += "B";
                 break;
             case "X" :
+                html.setAttribute("src", "img/boutons/switch/x.png");
                 valCode.value += "X";
                 break;
             case "Y" :
+                html.setAttribute("src", "img/boutons/switch/y.png");
                 valCode.value += "Y";
                 break;
             case "LEFT" :
-                html.setAttribute("class", "fas fa-caret-left");
+                html.setAttribute("src", "img/boutons/switch/left.png");
                 valCode.value += "LEFT";
                 break;
             case "RIGHT" :
-                html.setAttribute("class", "fas fa-caret-right");
+                html.setAttribute("src", "img/boutons/switch/right.png");
                 valCode.value += "RIGHT";
                 break;
             case "UP" :
-                html.setAttribute("class", "fas fa-caret-up");
+                html.setAttribute("src", "img/boutons/switch/up.png");
                 valCode.value += "UP";
                 break;
             case "DOWN" :
-                html.setAttribute("class", "fas fa-caret-down")
+                html.setAttribute("src", "img/boutons/switch/down.png");
                 valCode.value += "DOWN";
                 break;
             case "," :
