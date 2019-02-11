@@ -53,7 +53,21 @@
   </div>
 </div>
 <!-- /.hero-foot -->
+    <?php
+        include "class/guide.class.php";
+        $guides = guide::getAll();
+        var_dump($guides);
+        foreach($guides as $guide){
 
+            $perso = $guide->perso;
+            //$img = "<img src='img/personnage/$perso.png' >";
+            $auteur = $guide->pseudo;   //auteur du guide
+            $id = $guide->idGuide;      //id du guide accces via guide.php?id=$id
+            $titre = $guide->titre;     //titre du guide
+            $presentation = substr($guide->presentation,0,100); //100 premier caractere de la presentation du guide
+            //echo $presentation.$img;
+        }
+    ?>
 </section>
 <!-- /.hero -->
 

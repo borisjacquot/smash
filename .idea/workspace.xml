@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1283debe-5100-4045-8e01-4d8952eccfb4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Class/guide.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/combo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/combo.php" beforeDir="false" afterPath="$PROJECT_DIR$/combo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/creationGuide.php" beforeDir="false" afterPath="$PROJECT_DIR$/creationGuide.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/listeGuides.php" beforeDir="false" afterPath="$PROJECT_DIR$/listeGuides.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,29 +26,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/creationGuide.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="147" selection-start-line="6" selection-start-column="147" selection-end-line="6" selection-end-column="147" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/class/guide.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+            <state relative-caret-position="450">
+              <caret line="25" column="99" selection-start-line="25" selection-start-column="99" selection-end-line="25" selection-end-column="99" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/combo.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/listeGuides.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="63" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
+            <state relative-caret-position="414">
+              <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -98,13 +84,14 @@
         <option value="$PROJECT_DIR$/login.include.php" />
         <option value="$PROJECT_DIR$/combo.html" />
         <option value="$PROJECT_DIR$/combo.php" />
-        <option value="$PROJECT_DIR$/class/guide.class.php" />
         <option value="$PROJECT_DIR$/creationGuide.php" />
+        <option value="$PROJECT_DIR$/class/guide.class.php" />
+        <option value="$PROJECT_DIR$/listeGuides.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -168,12 +155,12 @@
       <workItem from="1547741949432" duration="13660000" />
       <workItem from="1549542209284" duration="700000" />
       <workItem from="1549627270268" duration="9287000" />
-      <workItem from="1549805834996" duration="11293000" />
+      <workItem from="1549805834996" duration="16175000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20407000" />
+    <option name="totallyTimeSpent" value="25289000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -185,11 +172,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.36680055" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2910345" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -282,6 +269,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/class/personnage.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/creationGuide.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/combo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -289,24 +290,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/class/personnage.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/class/guide.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+        <state relative-caret-position="450">
+          <caret line="25" column="99" selection-start-line="25" selection-start-column="99" selection-end-line="25" selection-end-column="99" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/creationGuide.php">
+    <entry file="file://$PROJECT_DIR$/listeGuides.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="147" selection-start-line="6" selection-start-column="147" selection-end-line="6" selection-end-column="147" />
+        <state relative-caret-position="414">
+          <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
         </state>
       </provider>
     </entry>
