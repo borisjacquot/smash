@@ -26,5 +26,8 @@ echo
     <p>Note : En cliquant sur un des champs, il est possible de modifier sa valeur</p>
 HTML
 ;
+//TODO REntrer les modifs dans la BD
+//todo gerer les restrictions de champs
+//todo Securiser les champs contre injection SQL
 ?>
 

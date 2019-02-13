@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Connexion</title>
+    <title>Inscription</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="css/debug.css"> -->
@@ -29,11 +29,17 @@ if(isset($_POST['pseudo']) && isset($_POST['psd1']) && isset($_POST['psd2']) && 
     if($_POST['psd1'] === $_POST['psd2']){ //si les 2 mots de passes correspondent
         if(!User::pseudoUse($_POST['pseudo'])) {//verifie si le pseudo est déjà utiliser
             User::addUser($_POST['pseudo'], $_POST['psd1'], $_POST['mail']);
-            echo "<h1>Le compte a été créé avec succès !</h1>";
-        }else{echo "Erreur, pseudo déjà utilisé";}echo "Vous êtes connecté"; //-----------------------------------------------------------------------------------------------------------------------------------AFFICHAGE
-    }else{echo "Erreur, les 2 mots de passes ne correspondent pas";}echo "Vous êtes connecté"; //-----------------------------------------------------------------------------------------------------------------------------------AFFICHAGE une fois la connexion réussie
+            echo "Le compte a été créé avec succès !";//---------------------------------------------------------AFFICHAGE INSCRPTION REUSSIE
+        }else{
+            echo "Erreur, pseudo déjà utilisé";
+        }
+    }else{
+        echo "Erreur, les 2 mots de passes ne correspondent pas";
+    }
 }
 
+//todo gerer les restrictions de champs
+//todo Securiser les champs contre injection SQL
 if(!isset($_SESSION['userID'])){
     echo <<<HTML
     <section class="hero is-fullheight">

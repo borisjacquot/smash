@@ -59,6 +59,8 @@ elseif(isset($_POST['pseudo']) && isset($_POST['psd'])){ // si il se connecte av
         echo "Erreur lors de la connexion"; //-----------------------------------------------------------------------------------------------------------------------------------AFFICHAGE echec de la connexion
     }
 }
+//todo gerer les restrictions de champs
+//todo Securiser les champs contre injection SQL
 if(!isset($_SESSION['userID'])){
     echo <<<HTML
     <section class="hero is-fullheight">

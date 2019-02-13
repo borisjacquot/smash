@@ -74,16 +74,16 @@ SQL
         $stmt = myPDO::getInstance()->prepare(<<<SQL
         SELECT pseudo
         FROM user
-        WHERE pseudo = :pseudo;
+        WHERE pseudo = ?;
 SQL
         );
         $stmt->execute(array(
-            'pseudo' => $pseudo
+            $pseudo
         ));
         if($stmt == null){
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
 
@@ -101,7 +101,7 @@ SQL
                 'mdp'=>hash("sha512", $mdp),
                 'mail'=>$mail
             ));
-            echo "Votre compte à bien été créer";
+            return true;
         }
         catch (Error $e){
             echo "Erreur, lors de la création du compte.<br>$e";

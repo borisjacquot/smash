@@ -4,9 +4,13 @@ Session::start();
 
 include "class/personnage.class.php";
 include "class/guide.class.php";
-if(isset($_POST['perso']) && isset($_POST['presentation']) && isset($_POST['result']) && isset($_POST['video'])){
-    Guide::addGuide(2,$_POST['perso'],$_POST['presentation'],$_POST['result'],$_POST['video']);  // retourne div avec message création guide succes
+if(!isset($_SESSION['userID'])){
+    header("Location: index.php");
 }
+if(isset($_POST['perso']) && isset($_POST['presentation']) && isset($_POST['result']) && isset($_POST['video'])){
+    Guide::addGuide($_SESSION['userID'],$_POST['perso'],$_POST['presentation'],$_POST['result'],$_POST['video']);  // retourne div avec message création guide succes
+}
+//todo Gerer les votes
 ?>
 
 <form action="creationGuide.php" method="post">
