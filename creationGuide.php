@@ -1,6 +1,7 @@
 <?php
 require_once "class/session.class.php";
 Session::start();
+
 include "class/personnage.class.php";
 include "class/guide.class.php";
 if(isset($_POST['perso']) && isset($_POST['presentation']) && isset($_POST['result']) && isset($_POST['video'])){
