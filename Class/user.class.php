@@ -110,5 +110,18 @@ SQL
 
     }
 
+    public static function getUser($id){
+        $stmt = myPDO::getInstance()->prepare(<<<SQL
+            SELECT pseudo, mail, count(guide.idGuide) as nbGuide
+            FROM user,guide
+            WHERE guide.idUser = user.IdUser and user.idUser = ?
+SQL
+        );
+        $stmt->execute(array($id));
+        $stmt->setFetchMode(PDO::FETCH_CLASS,__CLASS__);
+        if(($object = $stmt->fetch()) !== false) {
+            return $object;
+        }
+    }
 
 }

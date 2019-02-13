@@ -21,7 +21,9 @@
 require "class/user.class.php";
 require_once "class/session.class.php";
 Session::start();
-
+if(isset($_SESSION['userID'])){
+    echo "Vous êtes déjà connecté";
+}
 if(isset($_COOKIE['token']) && isset($_COOKIE['identifier'])){// si il a les cookies REMEMBER ME
     if(User::verifToken($_COOKIE['token'],$_COOKIE['identifier'])){// si il correspondent
         $_SESSION['userID'] = $_COOKIE['identifier'];
@@ -37,7 +39,7 @@ elseif(isset($_POST['pseudo']) && isset($_POST['psd'])){ // si il se connecte av
 
     if($userID!=null){
         $userID = $userID->idUser;
-        if($_POST['remember']){
+        if(isset($_POST['remember']) && $_POST['remember']){
             $rndINT = random_int(100,1000);
             $userIDHash = hash("sha512",$userID);
             $rndINTHash = hash("sha512",$rndINT);

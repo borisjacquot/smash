@@ -21,7 +21,6 @@
 require "class/user.class.php";
 require_once "class/session.class.php";
 Session::start();
-if(isset($_SESSION['']))
 if(isset($_POST['pseudo']) && isset($_POST['psd1']) && isset($_POST['psd2']) && isset($_POST['mail'])){
     if($_POST['psd1'] === $_POST['psd2']){
         if(User::pseudoUse($_POST['pseudo'])) {
