@@ -1,3 +1,22 @@
+<?php
+if(isset($_POST['logout'])){
+    session_destroy();
+    $_SESSION['userID'] =null;
+    //echo "Deconnexion réussie";//----------------------------AFFICHAGE message confirme deconnexion
+}
+if(isset($_POST['connexion'])) {
+
+    if (isset($_COOKIE['token']) && isset($_COOKIE['identifier'])) {// si il a les cookies REMEMBER ME
+
+        if (User::verifToken($_COOKIE['token'], $_COOKIE['identifier'])) {// si il correspondent
+            $_SESSION['userID'] = $_COOKIE['identifier'];
+        } else {
+            $_SESSION['userID'] = "";
+            USer::delTokenAuth();
+        }
+    }else{echo "<SCRIPT LANGUAGE=\"JavaScript\">document.location.href=\"login.php\"</SCRIPT>";}
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,25 +34,35 @@
 <section class="hero is-dark is-shadowless">
 
 <!-- .hero-head -->
-<div class="hero-head">
-  <div class="columns is-mobile is-marginless heading has-text-weight-bold" style="background-color: #303952;">
-    <div class="column left">
-      <p class="navbar-item has-text-white">BetterSmash</p>
+    <div class="hero-head">
+        <div class="columns is-mobile is-marginless heading has-text-weight-bold" style="background-color: #303952;">
+            <div class="column left">
+                <p class="navbar-item has-text-white">BetterSmash</p>
+            </div>
+            <div class="column center desktop">
+                <p class="navbar-item active" ><i class="fas fa-book" style="color:#3dc1d3;margin-right: 5px;"></i>GUIDES</a></p>
+                <p class="navbar-item "><a href="index.php" class="nonactive"><i class="fas fa-home" style="margin-right: 5px;"></i> ACCUEIL</p>
+                <p class="navbar-item"><a href="listePersonnnage.php" class="nonactive"><i class="fas fa-fist-raised" style="color:#3dc1d3;margin-right: 5px;"></i>COMBATTANTS</a></p>
+            </div>
+            <div class="column right">
+                <?php
+                if(!isset($_SESSION['userID'])){
+                    echo "<form action=\"#\" method=POST>
+                            <button name=\"connexion\" class=\"navbar-item button is-rounded\" style=\"color: white; border: none; background-color: #3dc1d3;\">CONNEXION</button>
+                            <a href=\"inscription.php\" class=\"navbar-item button is-rounded \" style=\"color: white; border: none; background-color: #3dc1d3;\">INSCRIPTION</a>
+                          </form>";
+                }else{
+                    echo "<form action=\"#\" method=POST>
+                            <input type='submit' name=\"logout\" value=\"Deconnexion\" class=\"button is-rounded\" style=\"color: white; border: none; background-color: #3dc1d3;\">
+                         </form>";
+                }
+                ?>
+                <figure class="navbar-item image has-text-white">
+                    <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
+                </figure>
+            </div>
+        </div>
     </div>
-    <div class="column center desktop">
-      <p class="navbar-item active"><i class="fas fa-book" style="margin-right: 5px;"></i>GUIDES</p>
-      <p class="navbar-item"><a href="/" class="nonactive"><i class="fas fa-home" style="margin-right: 5px; color:#3dc1d3;"></i> ACCUEIL</a></p>
-      <p class="navbar-item"><a href="#" class="nonactive"><i class="fas fa-fist-raised" style="color:#3dc1d3;margin-right: 5px;"></i>COMBATTANTS</a></p>
-    </div>
-    <div class="column right">
-      <p class="navbar-item"><a href="login.include.php" class="nonactive">CONNEXION</a></p>
-      <a href="inscription.include.php" class="button is-rounded" style="color: white; border: none; background-color: #3dc1d3;">INSCRIPTION</a>
-      <figure class="navbar-item image has-text-white">
-        <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
-      </figure>
-    </div>
-  </div>
-</div>
 <!-- /.hero-head -->
 
 <!-- .hero-body -->
@@ -53,24 +82,24 @@
   </div>
 </div>
 <!-- /.hero-foot -->
-    <?php
-        include "class/guide.class.php";
-        $guides = guide::getAll();
-        var_dump($guides);
-        foreach($guides as $guide){
 
-            $perso = $guide->perso;
-            //$img = "<img src='img/personnage/$perso.png' >";
-            $auteur = $guide->pseudo;   //auteur du guide
-            $id = $guide->idGuide;      //id du guide accces via guide.php?id=$id
-            $titre = $guide->titre;     //titre du guide
-            $presentation = substr($guide->presentation,0,100); //100 premier caractere de la presentation du guide
-            //echo $presentation.$img;
-        }
-    ?>
 </section>
 <!-- /.hero -->
+<?php
+include "class/guide.class.php";
+$guides = guide::getAll();
+var_dump($guides);
+foreach($guides as $guide){
 
+    $perso = $guide->perso;
+    //$img = "<img src='img/personnage/$perso.png' >";
+    $auteur = $guide->pseudo;   //auteur du guide
+    $id = $guide->idGuide;      //id du guide accces via guide.php?id=$id
+    $titre = $guide->titre;     //titre du guide
+    $presentation = substr($guide->presentation,0,100); //100 premier caractere de la presentation du guide
+    //echo $presentation.$img;
+}
+?>
 <!-- .footer -->
 <section class="hero" style="background-color: #303952; color:#A2A9BD; margin-top: 50px;">
   <div class="hero-body">
