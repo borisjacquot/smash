@@ -26,7 +26,5 @@ echo
     <p>Note : En cliquant sur un des champs, il est possible de modifier sa valeur</p>
 HTML
 ;
-//onClick change le span en input avec valeur, <input onFocusOut=()>
-//onFocusout de l'input change en span  <span onFoucusout>valeur<span>
 ?>
 

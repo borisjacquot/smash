@@ -1,5 +1,9 @@
+<?php
+require_once "class/session.class.php";
+Session::start();
+?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,13 +25,13 @@
 			<p class="navbar-item has-text-white">BetterSmash</p>
 		</div>
 		<div class="column center desktop">
-			<p class="navbar-item"><a href="guides.php" class="nonactive"><i class="fas fa-book" style="color:#3dc1d3;margin-right: 5px;"></i>GUIDES</a></p>
+			<p class="navbar-item"><a href="listeGuides.php" class="nonactive"><i class="fas fa-book" style="color:#3dc1d3;margin-right: 5px;"></i>GUIDES</a></p>
 			<p class="navbar-item active"><i class="fas fa-home" style="margin-right: 5px;"></i> ACCUEIL</p>
 			<p class="navbar-item"><a href="#" class="nonactive"><i class="fas fa-fist-raised" style="color:#3dc1d3;margin-right: 5px;"></i>COMBATTANTS</a></p>
 		</div>
 		<div class="column right">
-			<p class="navbar-item"><a href="login.include.php" class="nonactive">CONNEXION</a></p>
-			<a href="inscription.include.php" class="button is-rounded" style="color: white; border: none; background-color: #3dc1d3;">INSCRIPTION</a>
+			<p class="navbar-item"><a href="login.php" class="nonactive">CONNEXION</a></p>
+			<a href="inscription.php" class="button is-rounded" style="color: white; border: none; background-color: #3dc1d3;">INSCRIPTION</a>
 			<figure class="navbar-item image has-text-white">
 				<i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
 			</figure>

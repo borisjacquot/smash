@@ -1,6 +1,6 @@
 <?php
 if(!isset($_GET['id'])){
-    header("Location: listePersonnage.php");
+    header("Location: listeGuides.php");
 }
 ?>
 
