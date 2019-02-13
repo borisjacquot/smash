@@ -80,10 +80,10 @@ SQL
         $stmt->execute(array(
             'pseudo' => $pseudo
         ));
-        if($stmt == null){
-            return true;
+        if($stmt == null){//aucun pseudo
+            return false;
         }
-        return false;
+        return true;//ce pseduo existe deja
     }
 
 
