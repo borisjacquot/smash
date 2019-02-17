@@ -51,16 +51,38 @@ if(isset($_POST['connexion'])) {
             <div class="column right">
                 <?php
                 if(!isset($_SESSION['userID'])){
-                    echo "<form action=\"#\" method=POST>
-                            <button name=\"connexion\" class=\"navbar-item button is-rounded\" style=\"color: white; border: none; background-color: #3dc1d3;\">CONNEXION</button>
-                            <a href=\"inscription.php\" class=\"navbar-item button is-rounded \" style=\"color: white; border: none; background-color: #3dc1d3;\">INSCRIPTION</a>
-                          </form>";
+                    echo "<p class=\"navbar-item\"><a href=\"login.php\" class=\"nonactive\">CONNEXION</a></p>
+			<a href=\"inscription.php\" class=\"button is-rounded\" style=\"color: white; border: none; background-color: #3dc1d3;\">INSCRIPTION</a>";
                 }else{
-                    echo "<form action=\"#\" method=POST>
-                            <input type='submit' name=\"logout\" value=\"Deconnexion\" class=\"button is-rounded\" style=\"color: white; border: none; background-color: #3dc1d3;\">
-                         </form>";
+                    echo <<<HTML
+                    <div class="dropdown is-hoverable">
+					  <div class="dropdown-trigger">
+					    <button class="button is-rounded has-text-weight-bold" style="font-family: 'Nunito', sans-serif;color: white; border: none; background-color: #3dc1d3;" aria-haspopup="true" aria-controls="dropdown-menu4">
+					      <img src="img/img_avatar.png" class="avatar_header"><span>Pseudo</span>
+					      <span class="icon is-small">
+					        <i class="fas fa-angle-down" aria-hidden="true"></i>
+					      </span>
+					    </button>
+					  </div>
+					  <div class="dropdown-menu" id="dropdown-menu4" role="menu" style="left: -50px;">
+					    <div class="dropdown-content">
+					      <div class="dropdown-item">
+					        <a href="#" class="dropdown-item">
+						      Profil
+						    </a>
+						    <hr class="dropdown-divider">
+						    <a href="#" class="dropdown-item">
+						      Déconnection
+						    </a>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+HTML;
                 }
+
                 ?>
+				
                 <figure class="navbar-item image has-text-white">
                     <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
                 </figure>
@@ -84,21 +106,21 @@ if(isset($_POST['connexion'])) {
 	<div class="container has-text-centered">
 		<div class="columns is-centered" style="margin-top: -40px;padding-bottom: 20px;">
 			<div class="column is-3">
-				<span class="icon is-large rotating">
+				<span class="icon is-large">
 				  <i class="fas fa-pencil-ruler fa-7x"></i>
 				</span>
 				<h3 class="title" style="margin-top: 40px;">Créez vos propres guides</h3>
 				<p class="heading has-text-weight-bold" style="font-size: 15px;">Vous voulez partager votre expérience de jeu ? Lancez vous! Sur BetterSmash, peu importe votre niveau, partagez vos techniques à tout le monde!</p>
 			</div>
 			<div class="column is-3">
-				<span class="icon is-large rotating">
+				<span class="icon is-large">
 				  <i class="fab fa-readme fa-7x"></i>
 				</span>
 				<h3 class="title" style="margin-top: 40px;">Consulter et améliorer</h3>
 				<p class="heading has-text-weight-bold" style="font-size: 15px;">BetterSmash est avant tout une communauté. Apprenez des meilleurs, mais aidez aussi les plus novices. N'hésitez pas à proposer des améliorations à certains guides!</p>
 			</div>
 			<div class="column is-3">
-				<span class="icon is-large rotating">
+				<span class="icon is-large">
 				  <i class="fas fa-running fa-7x"></i>
 				</span>
 				<h3 class="title" style="margin-top: 40px;">Découvrez les combattants du moment!</h3>
