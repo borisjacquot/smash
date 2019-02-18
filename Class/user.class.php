@@ -112,7 +112,7 @@ SQL
 
     public static function getUser($id){
         $stmt = myPDO::getInstance()->prepare(<<<SQL
-            SELECT pseudo, mail, count(guide.idGuide) as nbGuide
+            SELECT pseudo, mail, count(guide.idGuide) as nbGuide, avatar
             FROM user,guide
             WHERE guide.idUser = user.IdUser and user.idUser = ?
 SQL

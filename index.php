@@ -3,10 +3,9 @@ require_once "class/session.class.php";
 require_once "class/user.class.php";
 Session::start();
 
-if(isset($_POST['logout'])){
+if(isset($_GET['logout'])){
     session_destroy();
     $_SESSION['userID'] =null;
-    //echo "Deconnexion réussie";//----------------------------AFFICHAGE message confirme deconnexion
 }
 if(isset($_POST['connexion'])) {
 
@@ -54,11 +53,14 @@ if(isset($_POST['connexion'])) {
                     echo "<p class=\"navbar-item\"><a href=\"login.php\" class=\"nonactive\">CONNEXION</a></p>
 			<a href=\"inscription.php\" class=\"button is-rounded\" style=\"color: white; border: none; background-color: #3dc1d3;\">INSCRIPTION</a>";
                 }else{
+									$user = user::getUser($_SESSION['userID']);
+									$pseudo=$user->pseudo;
+									$avatar=$user->avatar;
                     echo <<<HTML
                     <div class="dropdown is-hoverable">
 					  <div class="dropdown-trigger">
 					    <button class="button is-rounded has-text-weight-bold" style="font-family: 'Nunito', sans-serif;color: white; border: none; background-color: #3dc1d3;" aria-haspopup="true" aria-controls="dropdown-menu4">
-					      <img src="img/img_avatar.png" class="avatar_header"><span>Pseudo</span>
+					      <img src="img/avatar/$avatar" class="avatar_header"><span>$pseudo</span>
 					      <span class="icon is-small">
 					        <i class="fas fa-angle-down" aria-hidden="true"></i>
 					      </span>
@@ -67,11 +69,11 @@ if(isset($_POST['connexion'])) {
 					  <div class="dropdown-menu" id="dropdown-menu4" role="menu" style="left: -50px;">
 					    <div class="dropdown-content">
 					      <div class="dropdown-item">
-					        <a href="#" class="dropdown-item">
+					        <a href="compte.php" class="dropdown-item">
 						      Profil
 						    </a>
 						    <hr class="dropdown-divider">
-						    <a href="#" class="dropdown-item">
+						    <a href="index.php?logout" class="dropdown-item">
 						      Déconnection
 						    </a>
 					      </div>

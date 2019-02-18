@@ -27,7 +27,7 @@ if(isset($_SESSION['userID'])){// si connecté redirection vers index.php
 //Verifie si tout les infos des champs sont reçues
 if(isset($_POST['pseudo']) && isset($_POST['psd1']) && isset($_POST['psd2']) && isset($_POST['mail'])){
     if($_POST['psd1'] === $_POST['psd2']){ //si les 2 mots de passes correspondent
-        if(!User::pseudoUse($_POST['pseudo'])) {//verifie si le pseudo est déjà utiliser
+        if(User::pseudoUse($_POST['pseudo'])) {//verifie si le pseudo est déjà utiliser
             User::addUser($_POST['pseudo'], $_POST['psd1'], $_POST['mail']);
             echo "Le compte a été créé avec succès !";//---------------------------------------------------------AFFICHAGE INSCRPTION REUSSIE
         }else{

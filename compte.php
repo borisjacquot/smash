@@ -21,7 +21,7 @@ echo
     <ul>
         Pseudo : <span onclick="toInput('pseudo','text')" id="pseudo">$pseudo</span><br>
         E-mail : <span onclick="toInput('mail','mail')" id="mail">$mail</span><br>
-        <span>Nombre de guide créer : $nbGuide</span>
+        <span>Nombre de guides créés : $nbGuide</span>
     </ul>
     <p>Note : En cliquant sur un des champs, il est possible de modifier sa valeur</p>
 HTML
