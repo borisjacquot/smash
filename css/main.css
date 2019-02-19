@@ -255,3 +255,48 @@ body{
   margin-top: -2px;
   margin-right: 10px;
 }
+
+.stat-val {
+  font-size: 3em;
+  padding-top: 20px;
+  font-weight: bold;
+}
+.stat-key {
+  font-size: 1.4em;
+  font-weight: 200;
+}
+.section.profile-heading .column.is-2-tablet.has-text-centered + .has-text-centered {
+  border-left: 1px dotted rgba(255, 255, 255, .2);
+}
+.container.profile {
+  margin-top: 1%;
+}
+.control.is-pulled-left span.select {
+  margin-right: 5px;
+  border-radius: 2px;
+}
+.modal-card .content h1 {
+  padding: 40px 10px 10px;
+  border-bottom: 1px solid #dadada;
+}
+.container.profile .profile-options .tabs ul li.link a {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+.item {
+  position:relative;
+  padding-top:20px;
+  display:inline-block;
+}
+.notify-badge{
+  position: absolute;
+  right:-20px;
+  top:10px;
+  background:red;
+  text-align: center;
+  border-radius: 30px 30px 30px 30px;
+  color:white;
+  padding:5px 10px;
+  font-size:20px;
+}
