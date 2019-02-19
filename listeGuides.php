@@ -40,23 +40,48 @@ if(isset($_POST['connexion'])) {
                 <p class="navbar-item has-text-white">BetterSmash</p>
             </div>
             <div class="column center desktop">
-                <p class="navbar-item active" ><i class="fas fa-book" style="color:#3dc1d3;margin-right: 5px;"></i>GUIDES</a></p>
-                <p class="navbar-item "><a href="index.php" class="nonactive"><i class="fas fa-home" style="margin-right: 5px;"></i> ACCUEIL</p>
+                <p class="navbar-item active"><i class="fas fa-book" style="margin-right: 5px;"></i>GUIDES</p>
+                <p class="navbar-item"><a href="/" class="nonactive"><i class="fas fa-home" style="color:#3dc1d3;margin-right: 5px;"></i> ACCUEIL</a></p>
                 <p class="navbar-item"><a href="listePersonnage.php" class="nonactive"><i class="fas fa-fist-raised" style="color:#3dc1d3;margin-right: 5px;"></i>COMBATTANTS</a></p>
             </div>
             <div class="column right">
                 <?php
                 if(!isset($_SESSION['userID'])){
-                    echo "<form action=\"#\" method=POST>
-                            <button name=\"connexion\" class=\"navbar-item button is-rounded\" style=\"color: white; border: none; background-color: #3dc1d3;\">CONNEXION</button>
-                            <a href=\"inscription.php\" class=\"navbar-item button is-rounded \" style=\"color: white; border: none; background-color: #3dc1d3;\">INSCRIPTION</a>
-                          </form>";
+                    echo "<p class=\"navbar-item\"><a href=\"login.php\" class=\"nonactive\">CONNEXION</a></p>
+      <a href=\"inscription.php\" class=\"button is-rounded\" style=\"color: white; border: none; background-color: #3dc1d3;\">INSCRIPTION</a>";
                 }else{
-                    echo "<form action=\"#\" method=POST>
-                            <input type='submit' name=\"logout\" value=\"Deconnexion\" class=\"button is-rounded\" style=\"color: white; border: none; background-color: #3dc1d3;\">
-                         </form>";
+                  $user = user::getUser($_SESSION['userID']);
+                  $pseudo=$user->pseudo;
+                  $avatar=$user->avatar;
+                    echo <<<HTML
+                    <div class="dropdown is-hoverable">
+            <div class="dropdown-trigger">
+              <button class="button is-rounded has-text-weight-bold" style="font-family: 'Nunito', sans-serif;color: white; border: none; background-color: #3dc1d3;" aria-haspopup="true" aria-controls="dropdown-menu4">
+                <img src="img/avatar/$avatar" class="avatar_header"><span>$pseudo</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu4" role="menu" style="left: -50px;">
+              <div class="dropdown-content">
+                <div class="dropdown-item">
+                  <a href="compte.php" class="dropdown-item">
+                  Profil
+                </a>
+                <hr class="dropdown-divider">
+                <a href="index.php?logout" class="dropdown-item">
+                  Déconnection
+                </a>
+                </div>
+              </div>
+            </div>
+          </div>
+HTML;
                 }
+
                 ?>
+        
                 <figure class="navbar-item image has-text-white">
                     <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
                 </figure>
@@ -75,10 +100,8 @@ if(isset($_POST['connexion'])) {
 
 <!-- /.hero-foot -->
 <div class="hero-foot" style="background-color: #3dc1d3">
-  <div class="container has-text-centered">
-    <div class="titre">
-      <h1 class="texte title is-4">A la une</h1>
-    </div>
+  <div class="container">
+      <h1 class="title is-4">A la une</h1>
   </div>
 </div>
 <!-- /.hero-foot -->
