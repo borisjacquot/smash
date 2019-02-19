@@ -42,7 +42,7 @@ if(isset($_POST['connexion'])) {
             <div class="column center desktop">
                 <p class="navbar-item active" ><i class="fas fa-book" style="color:#3dc1d3;margin-right: 5px;"></i>GUIDES</a></p>
                 <p class="navbar-item "><a href="index.php" class="nonactive"><i class="fas fa-home" style="margin-right: 5px;"></i> ACCUEIL</p>
-                <p class="navbar-item"><a href="listePersonnnage.php" class="nonactive"><i class="fas fa-fist-raised" style="color:#3dc1d3;margin-right: 5px;"></i>COMBATTANTS</a></p>
+                <p class="navbar-item"><a href="listePersonnage.php" class="nonactive"><i class="fas fa-fist-raised" style="color:#3dc1d3;margin-right: 5px;"></i>COMBATTANTS</a></p>
             </div>
             <div class="column right">
                 <?php
@@ -85,10 +85,11 @@ if(isset($_POST['connexion'])) {
 
 </section>
 <!-- /.hero -->
+
+
 <?php
 include "class/guide.class.php";
 $guides = guide::getAll();
-var_dump($guides);
 foreach($guides as $guide){
 
     $perso = $guide->perso;
@@ -98,8 +99,11 @@ foreach($guides as $guide){
     $titre = $guide->titre;     //titre du guide
     $presentation = substr($guide->presentation,0,100); //100 premier caractere de la presentation du guide
     //echo $presentation.$img;
+    echo "<br><a href='guide.php?id=$id'>$titre</a>";
 }
 ?>
+
+
 <!-- .footer -->
 <section class="hero" style="background-color: #303952; color:#A2A9BD; margin-top: 50px;">
   <div class="hero-body">

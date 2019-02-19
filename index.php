@@ -45,7 +45,7 @@ if(isset($_POST['connexion'])) {
             <div class="column center desktop">
                 <p class="navbar-item " ><a href="listeGuides.php" class="nonactive"><i class="fas fa-book" style="color:#3dc1d3;margin-right: 5px;"></i>GUIDES</a></p>
                 <p class="navbar-item active"><i class="fas fa-home" style="margin-right: 5px;"></i> ACCUEIL</p>
-                <p class="navbar-item"><a href="listePersonnnage.php" class="nonactive"><i class="fas fa-fist-raised" style="color:#3dc1d3;margin-right: 5px;"></i>COMBATTANTS</a></p>
+                <p class="navbar-item"><a href="listePersonnage.php" class="nonactive"><i class="fas fa-fist-raised" style="color:#3dc1d3;margin-right: 5px;"></i>COMBATTANTS</a></p>
             </div>
             <div class="column right">
                 <?php

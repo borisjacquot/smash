@@ -114,7 +114,7 @@ SQL
         $stmt = myPDO::getInstance()->prepare(<<<SQL
             SELECT pseudo, mail, count(guide.idGuide) as nbGuide, avatar
             FROM user,guide
-            WHERE guide.idUser = user.IdUser and user.idUser = ?
+            WHERE guide.idUser = user.idUser and user.idUser = ?
 SQL
         );
         $stmt->execute(array($id));

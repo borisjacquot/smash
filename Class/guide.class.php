@@ -34,4 +34,20 @@ SQL
         if(count($res) > 0)return $res;
         throw new Exception("...");
     }
+
+    public static function getGuide($id){
+        $stmt = myPDO::getInstance()->prepare(<<<SQL
+        SELECT guide.IdGuide, user.pseudo, guide.presentation, guide.combo, guide.URLVideo
+        FROM guide, user,personnage
+        WHERE guide.idUser = user.IdUser and guide.idPersonnage = personnage.idPersonnage and 
+        guide.idUser = ?;
+SQL
+        );
+        $stmt->execute($id);
+        $stmt->setFetchMode(PDO::FETCH_CLASS,__CLASS__);
+        $res = $stmt->fetch();
+        if(count($res) > 0)return $res;
+        throw new Exception("...");
+
+    }
 }
